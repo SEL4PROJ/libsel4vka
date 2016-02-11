@@ -97,7 +97,7 @@ static inline int vka_alloc_endpoint(vka_t *vka, vka_object_t *result)
 }
 static inline int vka_alloc_async_endpoint(vka_t *vka, vka_object_t *result)
 {
-    return vka_alloc_object(vka, seL4_AsyncEndpointObject, seL4_EndpointBits, result);
+    return vka_alloc_object(vka, seL4_NotificationObject, seL4_EndpointBits, result);
 }
 static inline int vka_alloc_cnode_object(vka_t *vka, uint32_t slot_bits, vka_object_t *result)
 {
@@ -283,7 +283,7 @@ vka_get_object_size(seL4_Word objectType, seL4_Word objectSize)
         return seL4_TCBBits;
     case seL4_EndpointObject:
         return seL4_EndpointBits;
-    case seL4_AsyncEndpointObject:
+    case seL4_NotificationObject:
         return seL4_EndpointBits;
     case seL4_CapTableObject:
         return (seL4_SlotBits + objectSize);

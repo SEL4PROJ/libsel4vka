@@ -130,7 +130,7 @@ kobject_get_type(kobject_t type, seL4_Word objectSize)
     case KOBJECT_ENDPOINT_SYNC:
         return seL4_EndpointObject;
     case KOBJECT_ENDPOINT_ASYNC:
-        return seL4_AsyncEndpointObject;
+        return seL4_NotificationObject;
 #ifdef CONFIG_CACHE_COLORING 
     case KOBJECT_KERNEL_IMAGE:
         return seL4_KernelImageObject;
